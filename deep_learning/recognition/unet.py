@@ -90,7 +90,6 @@ class UNet(BaseModel):
       upsampled = conv(upsampled, filters, is_training=is_training)
     # output segmentation map
     segmap = upsampled
-    for i in range(1, 4):
-      if i % 3 == 0 and i != 0:
-        return conv(segmap, class_num)
+    for i in range(1, 3):
       segmap = conv(segmap, filters, is_training=is_training)
+    return conv(segmap, class_num)
