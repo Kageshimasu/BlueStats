@@ -25,15 +25,6 @@ class BaseModel(metaclass=ABCMeta):
         :return      : result
         """
         pass
-    
-    @abstractmethod
-    def loss(self, *args):
-        """
-        get loss
-        :param args:
-        :return    : loss value
-        """
-        pass
 
     @abstractmethod
     def evaluate(self, *args):
